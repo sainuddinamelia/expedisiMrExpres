@@ -23,8 +23,22 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    alert("Form submitted! We'll contact you soon.");
+    
+    // Membuat pesan WhatsApp dengan format yang rapi
+    const message = `*Pesan dari Website MR EXPRESS*
+*Nama:* ${formData.name}
+*Email:* ${formData.email}
+*Telepon:* ${formData.phone}
+*Subjek:* ${formData.subject}
+*Pesan:* ${formData.message}`;
+    
+    // Encode pesan untuk URL WhatsApp
+    const encodedMessage = encodeURIComponent(message);
+    
+    // Buka WhatsApp dengan pesan yang sudah disiapkan
+    window.open(`https://wa.me/6282336829960?text=${encodedMessage}`, '_blank');
+    
+    // Reset form
     setFormData({
       name: "",
       email: "",
@@ -236,10 +250,10 @@ const ContactSection = () => {
                   
                   <Button 
                     type="submit" 
-                    className="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-lg transition flex items-center justify-center"
+                    className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition flex items-center justify-center"
                   >
-                    <i className="fas fa-paper-plane mr-2"></i>
-                    <span>Kirim Pesan</span>
+                    <i className="fab fa-whatsapp mr-2 text-xl"></i>
+                    <span>Kirim Pesan via WhatsApp</span>
                   </Button>
                 </form>
               </CardContent>
