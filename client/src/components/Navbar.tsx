@@ -62,7 +62,7 @@ const Navbar = () => {
 
           {/* WhatsApp Button (Desktop) */}
           <a
-            href="https://wa.me/6282336829960"
+            href="https://wa.me/6282336829960?text=Get"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:flex items-center bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg text-white font-medium transition"
@@ -106,7 +106,7 @@ const Navbar = () => {
 
               {/* WhatsApp Button (Mobile) */}
               <a
-                href="https://wa.me/6282336829960"
+                href="https://wa.me/6282336829960?text=Get"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center bg-green-500 hover:bg-green-600 px-4 py-3 rounded-lg text-white font-medium transition justify-center mt-2"
